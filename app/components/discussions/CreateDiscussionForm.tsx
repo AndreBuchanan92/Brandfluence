@@ -58,8 +58,8 @@ class CreateDiscussionForm extends React.Component<Props, State> {
       <React.Fragment>
         {open ? (
           <Head>
-            <title>New Discussion</title>
-            <meta name="description" content="Create new discussion" />
+            <title>New Campaign</title>
+            <meta name="campaign" content="Create new campaign" />
           </Head>
         ) : null}
         <Drawer
@@ -69,7 +69,7 @@ class CreateDiscussionForm extends React.Component<Props, State> {
           transitionDuration={{ enter: 500, exit: 500 }}
         >
           <div style={{ width: '100%', height: '100%', padding: '20px' }}>
-            <h3>Create new Discussion</h3>
+            <h3>Create new Campaign</h3>
             <form style={{ width: '100%', height: '60%' }} onSubmit={this.onSubmit}>
               <p />
               <div style={{ margin: '20px 0px' }}>
@@ -86,15 +86,15 @@ class CreateDiscussionForm extends React.Component<Props, State> {
                   color="primary"
                   disabled={this.state.disabled}
                 >
-                  Create Discussion
+                  Create Campaign
                 </Button>
               </div>
               <p />
               <br />
               <TextField
                 autoFocus
-                label="Type name of Discussion"
-                helperText="Give a short and informative name to new Discussion"
+                label="Type name of Campaign"
+                helperText="Give a short and informative name to new Campaign"
                 value={this.state.name}
                 onChange={event => {
                   this.setState({ name: event.target.value });
@@ -153,7 +153,7 @@ class CreateDiscussionForm extends React.Component<Props, State> {
       await discussion.addPost(content);
 
       this.setState({ name: '', memberIds: [] });
-      notify('You successfully added new Discussion.');
+      notify('You successfully added new Campaign.');
 
       Router.push(
         `/discussion?teamSlug=${currentTeam.slug}&discussionSlug=${discussion.slug}`,
@@ -179,7 +179,7 @@ class CreateDiscussionForm extends React.Component<Props, State> {
 
     return (
       <MemberChooser
-        helperText="These members will see all posts and be notified about unread posts in this Discussion."
+        helperText="These members will see all posts and be notified about unread posts in this Campaign."
         onChange={this.handleMemberChange}
         members={members}
         selectedMemberIds={this.state.memberIds}

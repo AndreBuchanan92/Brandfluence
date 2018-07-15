@@ -61,7 +61,7 @@ class EditDiscussionForm extends React.Component<Props, State> {
           <form onSubmit={this.onSubmit}>
             <TextField
               label="Type name of Discussion"
-              helperText="Give a short and informative name to Discussion"
+              helperText="Give a short and informative name to Campaign"
               value={this.state.name}
               onChange={event => {
                 this.setState({ name: event.target.value });
@@ -81,7 +81,7 @@ class EditDiscussionForm extends React.Component<Props, State> {
                 Cancel
               </Button>
               <Button type="submit" variant="raised" color="primary" disabled={this.state.disabled}>
-                Update Discussion
+                Update Campaign
               </Button>
             </DialogActions>
           </form>
@@ -122,7 +122,7 @@ class EditDiscussionForm extends React.Component<Props, State> {
       await discussion.edit({ name, memberIds });
 
       this.setState({ name: '', memberIds: [] });
-      notify('You successfully edited Discussion.');
+      notify('You successfully edited Campaign.');
     } catch (error) {
       console.log(error);
       notify(error);

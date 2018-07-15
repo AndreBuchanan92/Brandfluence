@@ -119,11 +119,11 @@ class Discussion extends React.Component<Props> {
       if (currentTeam.isLoadingDiscussions) {
         return (
           <div style={styleGridItem}>
-            <Loading text="loading Discussions ..." />
+            <Loading text="loading campaigns ..." />
           </div>
         );
       } else {
-        return <div style={styleGridItem}>No discussion is found.</div>;
+        return <div style={styleGridItem}>No campaign is found.</div>;
       }
     }
 

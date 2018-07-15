@@ -30,13 +30,13 @@ class DiscussionList extends React.Component<Props> {
       <div>
         <ActiveLink
           hasIcon
-          linkText="Discussions"
+          linkText="Campaigns"
           href={`/discussion?teamSlug=${team.slug}`}
           as={`/team/${team.slug}/d`}
           highlighterSlug={`/${team.slug}/d`}
         />
 
-        <Tooltip title="Add Discussion" placement="right" disableFocusListener disableTouchListener>
+        <Tooltip title="Add Campaign" placement="right" disableFocusListener disableTouchListener>
           <a onClick={this.addDiscussion} style={{ float: 'right', padding: '0px 10px' }}>
             <i className="material-icons" color="action" style={{ fontSize: 14, opacity: 0.7 }}>
               add_circle_outline
